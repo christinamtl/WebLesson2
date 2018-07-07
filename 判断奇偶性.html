@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            background-color: rgba(59, 59, 56, 0.233);
+            width: 35em;
+            height: 9em;
+            margin: 2em auto;
+            padding: 2em;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: brown;
+        }
+
+        span,
+        input,
+        p {
+            margin-top: .5em;
+        }
+
+        input {
+            height: 1.8em;
+        }
+
+        button {
+            width: 3em;
+            height: 1.3em;
+            background-color: rgb(171, 238, 169);
+            font-size: 1em;
+            border: .15em groove #ec718a;
+            color: rgb(5, 46, 48);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span>请输入一段文字：</span>
+        <input type="text" id="txt1">
+        <p>点击
+            <button onclick="myOe()">判断</button>&nbsp;确认奇偶性</p>
+        <p id="demo"></p>
+    </div>
+
+    <script>
+        function myOe() {
+            var numb = document.getElementById("txt1").value;
+            if (numb === "") {
+                document.getElementById("demo").innerHTML = "Entrer le contenu,svp!";
+            } else if (isNaN(numb)) {
+                document.getElementById("demo").innerHTML = "C'est un NaN!";
+            } else if (numb % 2 == 0) {
+                document.getElementById("demo").innerHTML = "C'est un nombre pair!";
+            } else if (numb % 2 == 1) {
+                document.getElementById("demo").innerHTML = "C'est un nombre impair!";
+            } else if (!/^\d+$/.test(numb)) {
+                document.getElementById("demo").innerHTML = "Ce n'est pas un nombre entier!"
+            }
+        }
+    </script>
+</body>
+
+</html>
